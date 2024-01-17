@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Unidade extends Model
 {
     use HasFactory;
-
+    protected $fillable = ['nome_fantasia', 'razao_social', 'cnpj'];
     public function colaboradores()
     {
         return $this->hasMany(Colaborador::class);
