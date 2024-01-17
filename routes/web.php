@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ColaboradorController;
 use App\Http\Controllers\UnidadeController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,6 @@ Route::get('/', function () {
 
 Route::get('/unidades/create', [UnidadeController::class,'create'])->name('unidades.create');
 Route::post('/unidades', [UnidadeController::class,'store'])->name('unidades.store');
+
+Route::get('/colaboradores/create', [ColaboradorController::class,'create'])->name('colaboradores.create');
+Route::post('/colaboradores', [ColaboradorController::class,'store'])->name('colaboradores.store');

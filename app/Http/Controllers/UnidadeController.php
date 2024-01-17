@@ -14,7 +14,7 @@ class UnidadeController extends Controller
 
     public function store(Request $request)
     {
-        $unidade = Unidade::create($request->all());
+        Unidade::create($request->all());
 
         return redirect()->route('home.page');
     }
