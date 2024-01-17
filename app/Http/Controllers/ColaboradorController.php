@@ -10,6 +10,18 @@ use Illuminate\Http\Request;
 
 class ColaboradorController extends Controller
 {
+
+    public function relatorioColaboradores(Request $request)
+    {
+        $data = Colaborador::select('colaboradores.*', 'unidades.nome_fantasia', 'cargos.cargo')
+            ->join('unidades','colaboradores.unidade_id','=','unidades.id')
+            ->join('cargo_colaborador','colaboradores.id','=','cargo_colaborador.colaborador_id')
+            ->join('cargos','cargo_colaborador.cargo_id','=','cargos.id')
+            ->get();
+
+        return view('colaboradores.relatorio')->with('data', $data);
+    }
+
     public function create(Request $request)
     {
         $unidades = Unidade::all();
