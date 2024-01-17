@@ -16,7 +16,10 @@ class CreateCargoColaboradorTable extends Migration
         Schema::create('cargo_colaborador', function (Blueprint $table) {
             $table->id();
             $table->foreignId('cargo_id')->constrained()->onDelete('cascade');
-            $table->foreignId('colaborador_id')->constrained()->onDelete('cascade');
+
+            $table->unsignedBigInteger('colaborador_id');
+            $table->foreign('colaborador_id')->references('id')->on('colaboradores');
+
             $table->unsignedTinyInteger('nota_desempenho');
             $table->timestamps();
         });

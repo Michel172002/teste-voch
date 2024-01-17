@@ -9,6 +9,8 @@ class CargoColaborador extends Model
 {
     use HasFactory;
 
+    protected $table = 'cargo_colaborador';
+
     public function cargo()
     {
         return $this->belongsTo(Cargo::class);
