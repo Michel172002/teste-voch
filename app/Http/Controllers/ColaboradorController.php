@@ -38,6 +38,7 @@ class ColaboradorController extends Controller
             ->join('unidades','colaboradores.unidade_id','=','unidades.id')
             ->join('cargo_colaborador','colaboradores.id','=','cargo_colaborador.colaborador_id')
             ->join('cargos','cargo_colaborador.cargo_id','=','cargos.id')
+            ->orderBy('colaboradores.nome')
             ->get();
 
         return view('colaboradores.relatorio')->with('data', $data);
