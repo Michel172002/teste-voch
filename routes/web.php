@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('home');
 })->name('home.page');
 
+Route::get('/unidades/relatorio', [UnidadeController::class,'relatorioUnidades'])->name('unidades.relatorio');
 Route::get('/unidades/create', [UnidadeController::class,'create'])->name('unidades.create');
 Route::post('/unidades', [UnidadeController::class,'store'])->name('unidades.store');
 

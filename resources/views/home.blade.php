@@ -4,4 +4,5 @@
     <a href="{{ route('cargoColaboradores.create') }}" class="btn btn-warning">Cadastrar/Editar desempenho</a>
 
     <a href="{{ route('colaboradores.relatorio') }}" class="btn btn-warning">Relatorio Colaboradores</a>
+    <a href="{{ route('unidades.relatorio') }}" class="btn btn-warning">Relatorio Unidades</a>
 </x-layout>
