@@ -19,6 +19,7 @@ class CreteColaboradoresTable extends Migration
             $table->string('nome');
             $table->string('cpf', 11)->unique();
             $table->string('email');
+            $table->timestamps();
         });
     }
 
