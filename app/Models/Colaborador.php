@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Unidade extends Model
+class Colaborador extends Model
 {
     use HasFactory;
 
-    public function colaboradores()
+    public function unidade()
     {
-        return $this->hasMany(Colaborador::class);
+        return $this->belongsTo(Unidade::class);
     }
 }
