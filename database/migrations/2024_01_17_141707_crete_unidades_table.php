@@ -17,7 +17,7 @@ class CreteUnidadesTable extends Migration
             $table->id();
             $table->string('nome_fantasia');
             $table->string('razao_social');
-            $table->string('cnpj', 18);
+            $table->string('cnpj', 14)->unique();
             $table->timestamps();
         });
     }

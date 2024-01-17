@@ -17,7 +17,7 @@ class CreteColaboradoresTable extends Migration
             $table->id();
             $table->foreignId('unidade_id')->constrained()->onDelete('cascade');
             $table->string('nome');
-            $table->string('cpf', 14);
+            $table->string('cpf', 11)->unique();
             $table->string('email');
         });
     }
