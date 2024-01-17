@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Colaborador extends Model
 {
     use HasFactory;
-
+    protected $table = 'colaboradores';
     public function unidade()
     {
         return $this->belongsTo(Unidade::class);
