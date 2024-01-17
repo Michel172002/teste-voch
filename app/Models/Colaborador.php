@@ -13,4 +13,9 @@ class Colaborador extends Model
     {
         return $this->belongsTo(Unidade::class);
     }
+
+    public function cargoColaborador()
+    {
+        return $this->belongsTo(CargoColaborador::class);
+    }
 }
