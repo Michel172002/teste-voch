@@ -1,4 +1,4 @@
-<x-layout title="Relatorio de Colaboradores">
+<x-layout title="Ranking de Colaboradores">
     <table class="table">
         <thead>
           <tr>
