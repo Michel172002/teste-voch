@@ -24,6 +24,7 @@ Route::get('/unidades/relatorio', [UnidadeController::class,'relatorioUnidades']
 Route::get('/unidades/create', [UnidadeController::class,'create'])->name('unidades.create');
 Route::post('/unidades', [UnidadeController::class,'store'])->name('unidades.store');
 
+Route::get('/colaboradores/ranking', [ColaboradorController::class,'rankingColaboradores'])->name('colaboradores.ranking');
 Route::get('/colaboradores/relatorio', [ColaboradorController::class,'relatorioColaboradores'])->name('colaboradores.relatorio');
 Route::get('/colaboradores/create', [ColaboradorController::class,'create'])->name('colaboradores.create');
 Route::post('/colaboradores', [ColaboradorController::class,'store'])->name('colaboradores.store');

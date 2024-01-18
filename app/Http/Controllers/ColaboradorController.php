@@ -43,4 +43,17 @@ class ColaboradorController extends Controller
 
         return view('colaboradores.relatorio')->with('data', $data);
     }
+
+    public function rankingColaboradores()
+    {
+        $data = Colaborador::select('colaboradores.*', 'unidades.nome_fantasia', 'cargos.cargo', 'cargo_colaborador.nota_desempenho as nota')
+            ->join('unidades','colaboradores.unidade_id','=','unidades.id')
+            ->join('cargo_colaborador','colaboradores.id','=','cargo_colaborador.colaborador_id')
+            ->join('cargos','cargo_colaborador.cargo_id','=','cargos.id')
+            ->orderBy('nota', 'desc')
+            ->orderBy('colaboradores.nome','desc')
+            ->get();
+
+        return view('colaboradores.ranking')->with('data', $data);
+    }
 }

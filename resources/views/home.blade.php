@@ -5,4 +5,5 @@
 
     <a href="{{ route('colaboradores.relatorio') }}" class="btn btn-warning">Relatorio Colaboradores</a>
     <a href="{{ route('unidades.relatorio') }}" class="btn btn-warning">Relatorio Unidades</a>
+    <a href="{{ route('colaboradores.ranking') }}" class="btn btn-warning">Ranking Colaboradores</a>
 </x-layout>
