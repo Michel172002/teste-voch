@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 class ColaboradorController extends Controller
 {
 
-    public function create()
+    public function create(Request $request)
     {
         $unidades = Unidade::all();
         $cargos = Cargo::all();
@@ -36,9 +36,9 @@ class ColaboradorController extends Controller
     public function relatorioColaboradores()
     {
         $data = Colaborador::select('colaboradores.*', 'unidades.nome_fantasia', 'cargos.cargo')
-            ->join('unidades','colaboradores.unidade_id','=','unidades.id')
-            ->join('cargo_colaborador','colaboradores.id','=','cargo_colaborador.colaborador_id')
-            ->join('cargos','cargo_colaborador.cargo_id','=','cargos.id')
+            ->join('unidades', 'colaboradores.unidade_id', '=', 'unidades.id')
+            ->join('cargo_colaborador', 'colaboradores.id', '=', 'cargo_colaborador.colaborador_id')
+            ->join('cargos', 'cargo_colaborador.cargo_id', '=', 'cargos.id')
             ->orderBy('colaboradores.nome')
             ->get();
 
@@ -48,11 +48,11 @@ class ColaboradorController extends Controller
     public function rankingColaboradores()
     {
         $data = Colaborador::select('colaboradores.*', 'unidades.nome_fantasia', 'cargos.cargo', 'cargo_colaborador.nota_desempenho as nota')
-            ->join('unidades','colaboradores.unidade_id','=','unidades.id')
-            ->join('cargo_colaborador','colaboradores.id','=','cargo_colaborador.colaborador_id')
-            ->join('cargos','cargo_colaborador.cargo_id','=','cargos.id')
+            ->join('unidades', 'colaboradores.unidade_id', '=', 'unidades.id')
+            ->join('cargo_colaborador', 'colaboradores.id', '=', 'cargo_colaborador.colaborador_id')
+            ->join('cargos', 'cargo_colaborador.cargo_id', '=', 'cargos.id')
             ->orderBy('nota', 'desc')
-            ->orderBy('colaboradores.nome','desc')
+            ->orderBy('colaboradores.nome', 'desc')
             ->get();
 
         return view('colaboradores.ranking')->with('data', $data);

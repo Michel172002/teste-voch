@@ -24,10 +24,10 @@ class UnidadeController extends Controller
     public function relatorioUnidades()
     {
         $data = Unidade::select('unidades.*', DB::raw('COUNT(colaboradores.id) as quantidade_colaboradores'))
-                ->leftJoin('colaboradores', 'unidades.id', '=', 'colaboradores.unidade_id')
-                ->groupBy('unidades.id')
-                ->orderBy('quantidade_colaboradores', 'desc')
-                ->get();
+            ->leftJoin('colaboradores', 'unidades.id', '=', 'colaboradores.unidade_id')
+            ->groupBy('unidades.id')
+            ->orderBy('quantidade_colaboradores', 'desc')
+            ->get();
 
         return view('unidades.relatorio')->with('data', $data);
     }

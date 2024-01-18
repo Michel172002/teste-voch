@@ -20,12 +20,12 @@ class GerarCargoColaboradorSeeder extends Seeder
             $cargoColaboradorList[] = [
                 'cargo_id' => $j,
                 'colaborador_id' => $i,
-                'nota_desempenho' => mt_rand(0,10),
+                'nota_desempenho' => mt_rand(0, 10),
             ];
 
-            if ($j == 10){
+            if ($j == 10) {
                 $j = 1;
-            }else{
+            } else {
                 $j++;
             }
         };
