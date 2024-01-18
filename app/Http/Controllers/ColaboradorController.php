@@ -17,7 +17,12 @@ class ColaboradorController extends Controller
         $unidades = Unidade::all();
         $cargos = Cargo::all();
 
-        return view('colaboradores.create')->with('unidades', $unidades)->with('cargos', $cargos);
+        $mensagemSucesso = session("mensagem.sucesso");
+
+        return view('colaboradores.create')
+            ->with('unidades', $unidades)
+            ->with('cargos', $cargos)
+            ->with('mensagemSucesso', $mensagemSucesso);
     }
 
     public function store(ColaboradorFormRequest $request)
@@ -30,7 +35,9 @@ class ColaboradorController extends Controller
             'nota_desempenho' => 0,
         ]);
 
-        return redirect()->route('home.page');
+        $request->session()->flash('mensagem.sucesso','Colaborador cadastrada com sucesso!');
+
+        return redirect()->route('colaboradores.create');
     }
 
     public function relatorioColaboradores()

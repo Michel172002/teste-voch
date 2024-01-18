@@ -1,4 +1,4 @@
-<x-layout title="Cadastro de Colaborador">
+<x-layout title="Cadastro de Colaborador" :mensagem-sucesso="$mensagemSucesso">
     <form action="{{ route('colaboradores.store') }}" method="POST">
         @csrf
         <div class="mb-3">

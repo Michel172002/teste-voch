@@ -9,16 +9,20 @@ use Illuminate\Support\Facades\DB;
 
 class UnidadeController extends Controller
 {
-    public function create()
+    public function create(Request $request)
     {
-        return view('unidades.create');
+        $mensagemSucesso = session('mensagem.sucesso');
+
+        return view('unidades.create')->with('mensagemSucesso', $mensagemSucesso);
     }
 
     public function store(UnidadeFormRequest $request)
     {
         Unidade::create($request->all());
 
-        return redirect()->route('home.page');
+        $request->session()->flash('mensagem.sucesso','Unidade cadastrada com sucesso!');
+
+        return redirect()->route('unidades.create');
     }
 
     public function relatorioUnidades()

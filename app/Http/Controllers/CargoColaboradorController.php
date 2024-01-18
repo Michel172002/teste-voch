@@ -13,7 +13,11 @@ class CargoColaboradorController extends Controller
     {
         $colaboradores = Colaborador::all();
 
-        return view('cargoColaboradores.edit')->with('colaboradores', $colaboradores);
+        $mensagemSucesso = session("mensagem.sucesso");
+
+        return view('cargoColaboradores.edit')
+            ->with('colaboradores', $colaboradores)
+            ->with('mensagemSucesso', $mensagemSucesso);
     }
 
     public function update(CargoColaboradorFormRequest $request)
@@ -23,6 +27,8 @@ class CargoColaboradorController extends Controller
                 'nota_desempenho' => $request->nota_desempenho,
             ]);
 
-        return redirect()->route('home.page');
+        $request->session()->flash('mensagem.sucesso','Nota de desempenho registrada com sucesso!');
+
+        return redirect()->route('cargoColaboradores.edit');
     }
 }

@@ -1,4 +1,4 @@
-<x-layout title="Cadastrar / Editar Desempenho">
+<x-layout title="Cadastrar / Editar Desempenho" :mensagem-sucesso="$mensagemSucesso">
     <form action="{{ route('cargoColaboradores.update') }}" method="POST">
         @csrf
         @method('PUT')

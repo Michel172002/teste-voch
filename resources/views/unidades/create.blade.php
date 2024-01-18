@@ -1,4 +1,4 @@
-<x-layout title="Cadastro de Unidade">
+<x-layout title="Cadastro de Unidade" :mensagem-sucesso="$mensagemSucesso">
     <form action="{{ route('unidades.store') }}" method="POST">
         @csrf
         <div class="mb-3">
