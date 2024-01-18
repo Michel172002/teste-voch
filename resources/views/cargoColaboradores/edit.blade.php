@@ -8,18 +8,13 @@
                 <select class="form-select" name="colaborador_id">
                     <option value="{{ null }}" selected>Selecione o colaborador</option>
                     @foreach ($colaboradores as $colaborador)
-                    <option value="{{ $colaborador->id }}">{{ $colaborador->nome }}</option>
+                        <option value="{{ $colaborador->id }}">{{ $colaborador->nome }}</option>
                     @endforeach
                 </select>
             </div>
             <div class="col-3">
                 <label for="desempenho" class="form-label">Desempenho</label>
-                <input
-                type="number"
-                class="form-control"
-                name="nota_desempenho"
-                value="{{ old('nota_desempenho') }}"
-                >
+                <input type="number" class="form-control" name="nota_desempenho" value="{{ old('nota_desempenho') }}">
             </div>
         </div>
         <button type="submit" class="btn btn-primary mt-3">Concluir</button>

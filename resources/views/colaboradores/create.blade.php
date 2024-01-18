@@ -3,33 +3,15 @@
         @csrf
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
-            <input
-                type="text"
-                class="form-control"
-                id="nome"
-                name="nome"
-                value="{{ old('nome') }}"
-            >
+            <input type="text" class="form-control" id="nome" name="nome" value="{{ old('nome') }}">
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                value="{{ old('email') }}"
-            >
+            <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
         </div>
         <div class="mb-3">
             <label for="cpf" class="form-label">CPF</label>
-            <input
-                type="text"
-                class="form-control"
-                id="cpf"
-                name="cpf"
-                value="{{ old('cpf') }}"
-            >
+            <input type="text" class="form-control" id="cpf" name="cpf" value="{{ old('cpf') }}">
         </div>
 
         <div class="row mb-3">
@@ -38,7 +20,7 @@
                 <select class="form-select" name="unidade_id">
                     <option value="{{ null }}" selected>Selecione a unidade</option>
                     @foreach ($unidades as $unidade)
-                    <option value="{{ $unidade->id }}">{{ $unidade->nome_fantasia }}</option>
+                        <option value="{{ $unidade->id }}">{{ $unidade->nome_fantasia }}</option>
                     @endforeach
                 </select>
             </div>
@@ -47,7 +29,7 @@
                 <select class="form-select" name="cargo_id">
                     <option value="{{ null }}" selected>Selecione o cargo</option>
                     @foreach ($cargos as $cargo)
-                    <option value="{{ $cargo->id }}">{{ $cargo->cargo }}</option>
+                        <option value="{{ $cargo->id }}">{{ $cargo->cargo }}</option>
                     @endforeach
                 </select>
             </div>
