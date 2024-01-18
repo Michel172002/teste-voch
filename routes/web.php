@@ -29,5 +29,5 @@ Route::get('/colaboradores/relatorio', [ColaboradorController::class,'relatorioC
 Route::get('/colaboradores/create', [ColaboradorController::class,'create'])->name('colaboradores.create');
 Route::post('/colaboradores', [ColaboradorController::class,'store'])->name('colaboradores.store');
 
-Route::get('/cargoColaboradores', [CargoColaboradorController::class,'create'])->name('cargoColaboradores.create');
-Route::post('/cargoColaboradores', [CargoColaboradorController::class,'store'])->name('cargoColaboradores.store');
+Route::get('/cargoColaboradores/edit', [CargoColaboradorController::class,'edit'])->name('cargoColaboradores.edit');
+Route::put('/cargoColaboradores/update', [CargoColaboradorController::class,'update'])->name('cargoColaboradores.update');

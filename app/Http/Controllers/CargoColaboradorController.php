@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 
 class CargoColaboradorController extends Controller
 {
-    public function create()
+    public function edit()
     {
         $colaboradores = Colaborador::all();
 
-        return view('cargoColaboradores.create')->with('colaboradores', $colaboradores);
+        return view('cargoColaboradores.edit')->with('colaboradores', $colaboradores);
     }
 
-    public function store(CargoColaboradorFormRequest $request)
+    public function update(CargoColaboradorFormRequest $request)
     {
         CargoColaborador::where('colaborador_id', $request->colaborador_id)
             ->update([

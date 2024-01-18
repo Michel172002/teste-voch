@@ -1,6 +1,7 @@
 <x-layout title="Cadastrar / Editar Desempenho">
-    <form action="{{ route('cargoColaboradores.store') }}" method="POST">
+    <form action="{{ route('cargoColaboradores.update') }}" method="POST">
         @csrf
+        @method('PUT')
         <div class="row mt-3">
             <div class="col-5">
                 <label for="colaborador" class="form-label">Colaboradores</label>
