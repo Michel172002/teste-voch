@@ -29,8 +29,14 @@ cd teste-voch/
 
 <h3>Config .env</h2>
 
+Linux
 ```bash
 cp .env.example .env
+```
+
+Windows
+```bash
+copy .env.example .env
 ```
 
 <h3>Instalando dependencias</h2>
@@ -47,8 +53,14 @@ php artisan key:generate
 
 <h3>Criando Banco de dados</h2>
 
+Linux
 ```bash
 touch database/database.sqlite
+```
+
+Windows
+```bash
+type nul > database\database.sqlite
 ```
 
 <h3>Exec Migrações e Popula o BD</h2>
