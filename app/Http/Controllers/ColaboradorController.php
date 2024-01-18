@@ -35,7 +35,7 @@ class ColaboradorController extends Controller
             'nota_desempenho' => 0,
         ]);
 
-        $request->session()->flash('mensagem.sucesso','Colaborador cadastrada com sucesso!');
+        $request->session()->flash('mensagem.sucesso','Colaborador cadastrado com sucesso!');
 
         return redirect()->route('colaboradores.create');
     }
