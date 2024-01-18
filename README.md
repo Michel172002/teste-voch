@@ -74,3 +74,5 @@ php artisan migrate --seed
 ```bash
 php artisan serve
 ```
+
+Acesse http://127.0.0.1:8000  
