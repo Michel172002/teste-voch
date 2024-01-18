@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ColaboradorFormRequest;
 use App\Models\Cargo;
 use App\Models\CargoColaborador;
 use App\Models\Colaborador;
@@ -11,7 +12,7 @@ use Illuminate\Http\Request;
 class ColaboradorController extends Controller
 {
 
-    public function create(Request $request)
+    public function create()
     {
         $unidades = Unidade::all();
         $cargos = Cargo::all();
@@ -19,7 +20,7 @@ class ColaboradorController extends Controller
         return view('colaboradores.create')->with('unidades', $unidades)->with('cargos', $cargos);
     }
 
-    public function store(Request $request)
+    public function store(ColaboradorFormRequest $request)
     {
         $colaborador = Colaborador::create($request->all());
 

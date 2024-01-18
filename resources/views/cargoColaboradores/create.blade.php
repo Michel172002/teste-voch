@@ -5,7 +5,7 @@
             <div class="col-5">
                 <label for="colaborador" class="form-label">Colaboradores</label>
                 <select class="form-select" name="colaborador_id">
-                    <option selected>Selecione o colaborador</option>
+                    <option value="{{ null }}" selected>Selecione o colaborador</option>
                     @foreach ($colaboradores as $colaborador)
                     <option value="{{ $colaborador->id }}">{{ $colaborador->nome }}</option>
                     @endforeach

@@ -12,6 +12,7 @@
         <div class="mb-3">
           <label for="cnpj" class="form-label">CNPJ</label>
           <input type="text" class="form-control" id="cnpj" name="cnpj">
+          <div id="cnpjHelp" class="form-text">Somente numeros! Ex: 00000000000000</div>
         </div>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>

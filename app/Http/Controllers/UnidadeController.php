@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UnidadeFormRequest;
 use App\Models\Unidade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class UnidadeController extends Controller
 {
-    public function create(Request $request)
+    public function create()
     {
         return view('unidades.create');
     }
 
-    public function store(Request $request)
+    public function store(UnidadeFormRequest $request)
     {
         Unidade::create($request->all());
 

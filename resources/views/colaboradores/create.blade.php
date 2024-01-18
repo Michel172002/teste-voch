@@ -18,7 +18,7 @@
             <div class="col-3">
                 <label for="cpf" class="form-label">Unidade</label>
                 <select class="form-select" name="unidade_id">
-                    <option selected>Selecione a unidade</option>
+                    <option value="{{ null }}" selected>Selecione a unidade</option>
                     @foreach ($unidades as $unidade)
                     <option value="{{ $unidade->id }}">{{ $unidade->nome_fantasia }}</option>
                     @endforeach
@@ -27,7 +27,7 @@
             <div class="col-3">
                 <label for="cpf" class="form-label">Cargo</label>
                 <select class="form-select" name="cargo_id">
-                    <option selected>Selecione o cargo</option>
+                    <option value="{{ null }}" selected>Selecione o cargo</option>
                     @foreach ($cargos as $cargo)
                     <option value="{{ $cargo->id }}">{{ $cargo->cargo }}</option>
                     @endforeach
